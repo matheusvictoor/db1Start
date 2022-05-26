@@ -1,0 +1,101 @@
+- 1ª Fase
+
+moveForward();
+moveForward();
+
+- 2ª Fase
+
+moveForward();
+turn("right");
+moveForward();
+moveForward();
+
+- 3ª Fase
+
+moveForward();
+moveForward();
+moveForward();
+moveForward();
+moveForward();
+moveForward();
+moveForward();
+
+- 4ª Fase
+
+repeatUntilGoal(function () {
+  moveForward();
+});
+
+- 5ª Fase
+
+repeatUntilGoal(function () {
+  turn("right");
+  moveForward();
+  moveForward();
+});
+
+- 6ª Fase
+
+for (var count = 0; count < 3; count++) {
+  moveForward();
+}
+turn("right");
+for (var count2 = 0; count2 < 6; count2++) {
+  moveForward();
+}
+turn("left");
+repeatUntilGoal(function () {
+  moveForward();
+});
+
+- 7ª Fase
+
+repeatUntilGoal(function () {
+  moveForward();
+  ifPath('right', function () {
+    turn("right");
+  });
+});
+
+- 8ª Fase
+
+repeatUntilGoal(function () {
+  moveForward();
+  ifPath('right', function () {
+    turn("right");
+  });
+});
+
+
+- 9ª Fase
+
+repeatUntilGoal(function () {
+  moveForward();
+  ifStandingOn('blueCoralBlock', function () {
+    turn("right");
+  });
+  ifStandingOn('redCoralBlock', function () {
+    turn("left");
+  });
+});
+
+- 10ª Fase
+
+repeatUntilGoal(function () {
+  moveForward();
+  ifStandingOn('seaLantern', function () {
+    turn("right");
+  });
+});
+
+- 11ª Fase
+
+repeatUntilConduit(function () {
+  moveForward();
+  placePrismarine();
+  ifStandingOnLimit('seaLantern', function () {
+    turn("right");
+  });
+});
+
+- 12ª Fase
