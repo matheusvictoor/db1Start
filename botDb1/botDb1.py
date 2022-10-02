@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import random
+from decouple import config
 
 bot = commands.Bot(command_prefix = "!", case_insensitive = True)
 
@@ -32,5 +33,5 @@ async def given_away(ctx, number):
     var = random.randint(1, int(number))
     await ctx.send(f"O número que saiu no dado foi {var}")
 
-
-bot.run('MTAyNjIwMDgzNjMzMTc5ODYzOA.GiLKu0.E2v_-Ts354NhGMlQgF3mYm5D204YGA2ils7m0s')
+TOKEN = config("TOKEN")
+bot.run(TOKEN)
